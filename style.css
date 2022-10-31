@@ -1,59 +1,649 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,700&family=Fuzzy+Bubbles&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+.container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-title{
+  font-size: 2rem;
+  font-weight: 200;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  text-align: center;
+}
+.section-title span{
+  color: blue;
+}
 
-h2 {
-  text-align: center;
-  font-family: 'Fuzzy Bubbles', cursive;
+/* Header section */
+nav{
+  position: fixed;
+  z-index: 1000;
+  background: rgba(36, 56, 237, 0.24);
+  height: 80px;
+  width: 100%;
 }
-p {
-  text-align: center;
-  font-family: 'Fuzzy Bubbles', cursive;
+#header .logox{
+  height: 100px;
+  padding: 0 100px;
+  transition: .3s ease transform;
 }
-.slider {
-    width: 500px;
-    height: 600px;
-    background-color: yellow;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
+#header .logox:hover{
+  transform: scale(1.1);
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.activex,a:hover{
+  background: blue
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
+/* End Header section */
+
+
+
+
+
+/* ---------------------------------------------------First page-------first page ------------------Code by Qasem----------------------------------------------- */
+a {
+  text-decoration: none;
+}
+
+#qasem{
+  background-image: url("images/q1.jpeg");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+#qasem::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .7;
+  z-index: -1;
+}
+#qasem .raheb{
+  margin-right: 50%;
+  margin-top: 20%;
+}
+#qasem h1{
+  display: block;
+  width: fit-content;
+  font-size: 3rem;
+  position: relative;
+  color: white;
+  animation: text_reveal .5s ease forwards;
+  animation-delay: 1s;
+}
+#qasem h1:nth-child(1){
+  animation-delay: 1s;
+}
+#qasem h1:nth-child(2){
+  animation-delay: 2s;
+}
+#qasem h1:nth-child(3){
+  animation-delay: 3s;
+}
+#qasem h1:nth-child(4){
+  animation: rext_reveal_name .5s ease forwards;
+  animation-delay: 4s;
+}
+#qasem h1 span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: blue;
+  animation: text_reveal_box 1s ease;
+  animation-delay: .3s;
+}
+#qasem h1:nth-child(1) span{
+  animation-delay: .5s;
+}
+#qasem h1:nth-child(2) span{
+  animation-delay: 1.5s;
+}
+#qasem h1:nth-child(3) span{
+  animation-delay: 2.5s;
+}
+#qasem h1:nth-child(4) span{
+  animation-delay: 3.5s;
+}
+#qasem .cta{
+  display: inline-block;
+  padding:10px;
+  color: blue;
+  background-color: transparent;
+  border: 3px solid blue;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin-top: 36px;
+  transition-property: .3s ease;
+}
+#qasem .cta:hover{
+  color: white;
+  background-color: blue;
+}
+
+/* ---------------------------------------------------First page-------End first page -------------------------Code by Qasem------------------------------------ */
+
+/* ---------------------------------------------------Second page ------Activity section-----------------------Code by Qasem------------------------------------ */
+#activites .activites{
+  flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px;
+}
+#activites .activites-top{
+  width: 500px;
+  margin: 0 auto;
+}
+
+#activites .activites-top p{
+  color: black;
+  font-size: 1.4rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: .05rem;
+  text-align: justify;
+}
+#activites .activites-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+#activites .activites-item{
+  flex-basis: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  background-image: url("images/black and white and blue.jpg");
+  background-size: cover;
+  margin: 10px 5px;
+  overflow: hidden;
+}
+#activites .activites-item::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .8;
+  z-index: -1; 
+}
+#activites .activites-bottom .icon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+#activites .activites-item h2{
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+#activites .activites-item p{
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+  line-height: 1.8rem;
+}
+/* ---------------------------------------------------Second page ------End Activity section------------------Code by Qasem------------------------------------- */
+
+/* ---------------------------------------------------Third page -------Start projects section----------------Code by Qasem------------------------------------- */
+#projects .projects{
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+#projects .projects-header h1{
+  margin-bottom: 50px;
+}
+#projects .all-projects{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+}
+#projects .project-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#projects .project-info{
+  padding: 30px;
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(60deg, blue 0%, lightblue 100%);
+  color: white;
+}
+#projects .project-info h1{
+  font-size: 2rem;
+  font-weight: 500;
+}
+#projects .project-info h2{
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+#projects .project-info p{
+  color: white;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+#projects .project-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-basis: 50%;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+#projects .project-img::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .6;
+}
+#projects .project-img img{
+  transition: .3s ease transform;
+}
+#projects .project-item:hover .project-img img{
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------Third page -------End projects section-------------Code by Qasem----------------------------------------- */
+
+/* ---------------------------------------------------Forth page -------Start About me section-----------Code by Qasem----------------------------------------- */
+#about .about{
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+#about .col-left{
+  width: 250px;
+  height: 360px;
+}
+#about .col-right{
+  width: 100%;
+}
+#about .col-right h2{
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  margin-bottom: 10px;
+}
+#about .col-right p{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: justify;
+}
+#about .cv{
+  display: inline-block;
+  padding:10px 20px;
+  color: blue;
+  background-color: transparent;
+  border: 3px solid blue;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin-top: 36px;
+  transition-property: .3s ease;
+  margin-bottom: 30px;
+
+}
+#about .cv:hover{
+  color: white;
+  background-color: blue;
+}
+#about .col-left .about-img{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#about .col-left .about-img::after{
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 19px;
+  height: 98%;
+  width: 98%;
+  border: 7px solid blue;
+  z-index: -1;
+}
+/* ---------------------------------------------------Forth page --------End About me section-----------------Code by Qasem------------------------------------- */
+/* ---------------------------------------------------Fifth page -------Start Contact section-----------------Code by Qasem------------------------------------- */
+#contact .contact {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#contact .contact-items {
+	/* max-width: 400px; */
+	width: 80%;
+}
+#contact .contact-item {
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 0px 18px 0 blue;
+	transition: 0.3s ease box-shadow;
+}
+#contact .contact-item:hover {
+	box-shadow: 0px 0px 5px 0 blue;
+}
+#contact .icon {
+	width: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#contact .contact-info h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+#contact .contact-info h2 {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+/* ---------------------------------------------------Fifth page -------End Contact section-------------------Code by Qasem------------------------------------- */
+
+/* ---------------------------------------------------Sixth page -------Start Footer section-------------------Code by Qasem------------------------------------- */
+
+#footer {
+	background-image: linear-gradient(60deg, rgb(23, 23, 26) 0%, rgb(42, 24, 139) 100%);
+}
+#footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+.brand h1{
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+.brand h1 span{
+  color: blue;
+}
+#footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+#footer .social-item {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+#footer .social-item img {
+  height: 60px;
+  width: 60px;
+	filter: grayscale(1);
+	transition: 0.3s ease filter;
+}
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+#footer p {
+	color:rgba(36, 56, 237, 0.24);
+	font-size: 1.3rem;
+}
+/* ---------------------------------------------------Sixth page -------End Footer section-------------------Code by Qasem------------------------------------- */
+@media (max-width: 952px){
+  label.logox{
+    height: 30px;
+    width: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
     text-align: center;
-    overflow: hidden;
+    transition: all .5s;
   }
-  .image-container {
-    width: 1500px;
-    background-color: pink;
-    height: 600px;
-    clear: both;
-    position: relative;
-    -webkit-transition: left 1s;
-    -moz-transition: left 1s;
-    -o-transition: left 1s;
-    transition: left 1s;
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
   }
-  .slide {
-    float: left;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
+  nav ul li a{
+    font-size: 20px;
   }
-  #slide-1:target ~ .image-container {
-    left: 0px;
+  a:hover,a.activex{
+    background: none;
+    color: #0082e6;
   }
-  #slide-2:target ~ .image-container {
-    left: -500px;
+  #check:checked ~ ul{
+    left: 0;
   }
-  #slide-3:target ~ .image-container {
-    left: -1000px;
-  }
-  .buttons {
-    position: relative;
-    top: -20px;
-  }
-  .buttons a {
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    border-radius: 50px;
-    background-color: blue;
-  }
-  
+}
 
-  @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+
+
+
+  @keyframes text_reveal_box{
+    50%{
+      width: 100%;
+      left: 0%;
+    }
+    100%{
+      width: 0%;
+      left: 100%;
+    }
+  }
+  @keyframes rext_reveal{
+    100%{
+      color: white;
+    }
+  }
+  @keyframes rext_reveal_name{
+    100%{
+      color: blue;
+      font-weight: 500px;
+    }
+  }
+
+
+  @media only screen and (min-width: 780px){
+    
+    .cta{
+      font-size: 2.5rem;
+      padding: 20px 60px;
+    }
+    h1.section-title{
+      font-size: 3rem;
+    }
+    #qasem h1{
+      font-size: 4rem;
+    }
+
+    #activites .activites-top{
+      width: 100%;
+    }
+    #activites .activites-bottom .activites-item {
+      flex-basis: 45%;
+      margin: 2.5%;
+    }
+    #projects .project-item{
+      flex-direction: row;
+    }
+    #projects .project-item:nth-child(even){
+      flex-direction: row-reverse;
+    }
+    #projects .project-item{
+      height: 400px;
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
+    }
+    #projects .all-projects .project-info{
+      height: 100%;
+    }
+    #projects .all-projects .project-img{
+      height: 100%;
+    }
+
+    #about .about{
+      flex-direction: row;
+    }
+    #about .col-left{
+      width: 600px;
+      height: 400px;
+      padding-left: 60px;
+    }
+    #about .about .col-left .about-img::after{
+      left: -45px;
+      top: 34px;
+      height: 98%;
+      width: 98%;
+      border: 10px solid blue;
+    }
+    #about .col-right{
+      text-align: left;
+      margin-left: 20px;
+    }
+    #about .col-right h1{
+      text-align: left;
+    }
+
+
+    #contact .contact{
+      flex-direction: column;
+      padding: 100px 0;
+      align-items: center;
+      justify-content: center;
+      min-width: 20vh;
+    }
+    #contact .contact-items{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      margin: 0;
+    }
+    #contact .contact-item{
+      margin: 20px;
+      flex-direction: row;
+    }
+    #contact .contact-item .icon{
+      height: 80px;
+      width: 80px;
+    }
+    #contact .contact-item .icon img{
+      object-fit: contain;
+    }
+    #contact .contact-item .contact-info{
+      width: 100%;
+      text-align: left;
+      padding-left: 20px;
+    }
+  }
+
+
+  @media only screen and (min-width: 1200px) {
+    #activites .activites-bottom .activites-item{
+      flex-basis: 22%;
+      margin: 1.5%;
+    } 
+  }
