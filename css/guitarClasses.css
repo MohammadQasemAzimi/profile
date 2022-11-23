@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,700&family=Fuzzy+Bubbles&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 200;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center;
+}
+
+.section-title span {
+    color: blue;
+}
+
+/* ---------------------------------------------------Header page-------Nav bar Start-----------------Code by Qasem----------------------------------------------- */
+#headerGuitar {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#headerGuitar .header {
+    min-height: 8vh;
+    background-color: transparent;
+    transition: .5s ease background-color;
+}
+
+#headerGuitar .brand img {
+    margin-bottom: -10%;
+    height: 100px;
+    width: 100px;
+    transition: .7s ease transform;
+}
+
+#headerGuitar .brand img:hover {
+    transform: scale(1.5);
+}
+
+#headerGuitar .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#headerGuitar .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(43, 0, 255));
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .5s ease left;
+}
+
+#headerGuitar .nav-list ul.active {
+    left: 0%;
+}
+
+#headerGuitar .nav-list ul a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+#headerGuitar .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: blue;
+    opacity: .2;
+    font-size: 8rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .5s ease letter-spacing;
+}
+
+#headerGuitar .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#headerGuitar .nav-list ul li:hover a {
+    color: blue;
+}
+
+#headerGuitar .hamburger {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-right: 20px
+}
+
+#headerGuitar .hamburger::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: hamburger_puls 5s ease infinite;
+}
+
+#headerGuitar .hamburger .bar {
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#headerGuitar .hamburger .bar::after,
+#headerGuitar .hamburger .bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+
+#headerGuitar .hamburger .bar::after {
+    top: 8px;
+}
+
+#headerGuitar .hamburger .bar::before {
+    bottom: 8px;
+}
+
+#headerGuitar .hamburger.active .bar::after {
+    top: 0px;
+}
+
+#headerGuitar .hamburger.active .bar::before {
+    bottom: 0px;
+}
+
+/* ---------------------------------------------------First page--------Home Start --------------------Code by Qasem----------------------------------------------- */
+    a {
+        text-decoration: none;
+    }   
+
+    #guitar{
+        background-image: url(https://media.istockphoto.com/id/1129490620/photo/midsection-of-man-playing-a-guitar-black-and-white.jpg?s=612x612&w=0&k=20&c=drAnV8mj3LhV8wWOPjIGsA7BAYsb-GcoZV2AVXswQmw=);
+        background-size: cover;
+        background-position: top center;
+        position: relative;
+        z-index: 1;
+    }
+
+    #guitar::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: .7;
+        z-index: -1;
+    }
+
+    #guitar .raheb {
+        margin-right: 50%;
+        margin-top: 20%;
+    }
+
+    #guitar h1 {
+        display: block;
+        width: fit-content;
+        font-size: 3rem;
+        position: relative;
+        color: white;
+        animation: text_reveal .5s ease forwards;
+        animation-delay: 1s;
+    }
+
+    #guitar h1:nth-child(1) {
+        animation-delay: 1s;
+    }
+
+    #guitar h1:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    #qasem h1:nth-child(3) {
+        animation-delay: 3s;
+    }
+
+    #guitar h1:nth-child(4) {
+        animation: rext_reveal_name .5s ease forwards;
+        animation-delay: 4s;
+    }
+
+    #guitar h1 span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: blue;
+        animation: text_reveal_box 1s ease;
+        animation-delay: .3s;
+    }
+
+    #guitar h1:nth-child(1) span {
+        animation-delay: .5s;
+    }
+
+    #guitar h1:nth-child(2) span {
+        animation-delay: 1.5s;
+    }
+
+    #guitar h1:nth-child(3) span {
+        animation-delay: 2.5s;
+    }
+
+    #guitar h1:nth-child(4) span {
+        animation-delay: 3.5s;
+    }
+
+    #guitar .cta {
+        display: inline-block;
+        padding:10px;
+        color: blue;
+        background-color: transparent;
+        border: 3px solid blue;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        margin-top: 36px;
+        transition-property: .3s ease;
+        transition: 0.5s;
+    }
+
+    #guitar .cta:hover {
+        color: white;
+        background-color: blue;
+        transition: .5s;
+    }
+
+    /* ---------------------------------------------------First page-------End first page -------------------------Code by Qasem------------------------------------ */
+
+
+    /* ---------------------------------------------------Sixth page -------Start Footer section-------------------Code by Qasem------------------------------------- */
+
+    #footer {
+        background-image: linear-gradient(60deg, rgb(23, 23, 26) 0%, rgb(42, 24, 139) 100%);
+    }
+
+    #footer .footer {
+        min-height: 200px;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    .brand h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .brand h1 span {
+        color: blue;
+    }
+
+    #footer h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #footer .social-icon {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    #footer .social-item {
+        height: 50px;
+        width: 50px;
+        margin: 0 5px;
+    }
+
+    #footer .social-item img {
+        height: 60px;
+        width: 60px;
+        filter: grayscale(1);
+        transition: 0.3s ease filter;
+    }
+
+    #footer .social-item:hover img {
+        filter: grayscale(0);
+    }
+
+    #footer p {
+        color:blue;
+        font-size: 1.3rem;
+    }
+
+    /* ---------------------------------------------------Sixth page -------End Footer section-------------------Code by Qasem------------------------------------- */
+
+    /*-----------------------------------------------------------key forms---------------------------------------------------------------*/
+    @keyframes hamburger_puls {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(1.5);
+        }
+    }
+
+    @keyframes text_reveal_box {
+        50% {
+            width: 100%;
+            left: 0%;
+        }
+
+        100% {
+            width: 0%;
+            left: 100%;
+        }
+    }
+
+    @keyframes rext_reveal {
+        100% {
+            color: white;
+        }
+    }
+
+    @keyframes rext_reveal_name {
+        100% {
+            color: blue;
+            font-weight: 500px;
+        }
+    }
+
+
+    @media only screen and (min-width: 780px) {
+
+        /*--------------------------------------------------------- Projects part 780px ----------------------------------------------------*/
+        #activites .activites-top {
+            width: 100%;
+        }
+
+        #activites .activites-bottom .activites-item {
+            flex-basis: 45%;
+            margin: 2.5%;
+        }
+
+        #projects .project-item {
+            flex-direction: row;
+        }
+
+        #projects .project-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        #projects .project-item {
+            height: 400px;
+            margin: 0;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        #projects .all-projects .project-info {
+            height: 100%;
+        }
+
+        #projects .all-projects .project-img {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /*--------------------------------------------------------- about part 780px -------------------------------------------------------*/
+        #about .about {
+            flex-direction: row;
+        }
+
+        #about .col-left {
+            width: 600px;
+            height: 400px;
+            padding-left: 60px;
+        }
+
+        #about .about .col-left .about-img::after {
+            left: -45px;
+            top: 34px;
+            height: 98%;
+            width: 98%;
+            border: 10px solid blue;
+        }
+
+        #about .col-right {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        #about .col-right h1 {
+            text-align: left;
+        }
+
+        /*--------------------------------------------------------- contact part 780px -----------------------------------------------------*/
+        #contact .contact {
+            flex-direction: column;
+            padding: 100px 0;
+            align-items: center;
+            justify-content: center;
+            min-width: 20vh;
+        }
+
+        #contact .contact-items {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 50px;
+        }
+
+        #contact .contact-item {
+            margin: 5 px;
+            flex-direction: row;
+        }
+
+        #contact .contact-item .icon {
+            height: 100px;
+            width: 100px;
+        }
+
+        #contact .contact-item .icon img {
+            object-fit: contain;
+        }
+
+        #contact .contact-item .contact-info {
+            width: 100%;
+            text-align: left;
+            padding-left: 20px;
+        }
+    }
+
+    /*----------------------------------------------------------------------------------------------------------------*/
+    @media only screen and (min-width: 1200px) {
+        #headerGuitar .hamburger {
+            display: none;
+        }
+
+        #headerGuitar .nav-list ul {
+            position: initial;
+            display: block;
+            height: auto;
+            width: fit-content;
+            background-color: transparent;
+        }
+
+        #headerGuitar .nav-list ul li {
+            display: inline-block;
+        }
+
+        #headerGuitar .nav-list ul li a {
+            font-size: 1rem;
+        }
+
+        #headerGuitar .nav-list ul a::after {
+            display: none;
+        }
+
+        #activites .activites-bottom .activites-item {
+            flex-basis: 22%;
+            margin: 1.5%;
+        }
+    }

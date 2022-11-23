@@ -3,8 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+html{
+  font-size: 14px;
+  scroll-behavior: smooth;
 }
 .container{
   min-height: 100vh;
@@ -26,62 +29,149 @@
   color: blue;
 }
 
-/* Header section */
-nav{
+/* ---------------------------------------------------Header page-------Nav bar Start-----------------Code by Qasem----------------------------------------------- */
+#header{
   position: fixed;
   z-index: 1000;
-  background: rgba(36, 56, 237, 0.24);
-  height: 80px;
-  width: 100%;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
 }
-#header .logox{
+#header .header{
+  min-height: 8vh;
+  background-color: transparent; /*I should change this color*/
+  transition: .5s ease background-color;
+}
+#header .brand img{
+  margin-bottom: -10%;
   height: 100px;
-  padding: 0 100px;
-  transition: .3s ease transform;
+  width: 100px;
+  transition: .7s ease transform;
 }
-#header .logox:hover{
-  transform: scale(1.1);
+#header .brand img:hover{
+  transform: scale(1.5);
 }
-nav ul{
-  float: right;
-  margin-right: 20px;
+#header .nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
 }
-nav ul li{
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
+#header .nav-list ul{
+  list-style: none;
+  position: absolute;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(43, 0, 255));
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: .5s ease left;
 }
-nav ul li a{
+#header .nav-list ul.active {
+  left: 0%;
+}
+
+#header .nav-list ul a{
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  text-decoration: none;
   color: white;
-  font-size: 17px;
-  padding: 7px 13px;
-  border-radius: 3px;
   text-transform: uppercase;
+  padding: 20px;
+  display: block;
 }
-a.activex,a:hover{
-  background: blue
-  transition: .5s;
+#header .nav-list ul a::after{
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: blue;
+  opacity: .2;
+  font-size: 8rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: .5s ease letter-spacing;
 }
-.checkbtn{
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
+
+#header .nav-list ul li:hover a::after{
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+#header .nav-list ul li:hover a{
+  color: blue;
+}
+#header .hamburger{
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
   cursor: pointer;
-  display: none;
+  transform: scale(.8);
+  margin-right: 20px
 }
-#check{
-  display: none;
+#header .hamburger::after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: hamburger_puls 5s ease infinite;
+}
+#header .hamburger .bar{
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: white;
+  z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  transition: .3s ease;
+  transition-property: top, bottom;
+}
+#header .hamburger .bar::after{
+  top: 8px;
+}
+#header .hamburger .bar::before{
+  bottom: 8px;
+}
+#header .hamburger.active .bar::after{
+  top: 0px;
+}
+#header .hamburger.active .bar::before{
+  bottom: 0px;
 }
 
-/* End Header section */
 
 
+/* ---------------------------------------------------Header page-------Nav bar End------------------Code by Qasem----------------------------------------------- */
 
-
-
-/* ---------------------------------------------------First page-------first page ------------------Code by Qasem----------------------------------------------- */
+/* ---------------------------------------------------First page--------Home Start --------------------Code by Qasem----------------------------------------------- */
 a {
   text-decoration: none;
 }
@@ -162,10 +252,12 @@ a {
   letter-spacing: .1rem;
   margin-top: 36px;
   transition-property: .3s ease;
+  transition: 0.5s;
 }
 #qasem .cta:hover{
   color: white;
   background-color: blue;
+  transition: .5s;
 }
 
 /* ---------------------------------------------------First page-------End first page -------------------------Code by Qasem------------------------------------ */
@@ -193,6 +285,9 @@ a {
   font-weight: 300;
   letter-spacing: .05rem;
   text-align: justify;
+}
+#activites .activites-top p span{
+  color: blue;
 }
 #activites .activites-bottom{
   display: flex;
@@ -263,6 +358,7 @@ a {
 }
 #projects .project-item{
   display: flex;
+  width: 80%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -299,11 +395,12 @@ a {
   font-weight: 300;
 }
 #projects .project-img{
+  height: 200px;
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
   object-fit: cover;
   flex-basis: 50%;
-  height: 30px;
   overflow: hidden;
   position: relative;
 }
@@ -400,7 +497,7 @@ a {
 	padding: 20px;
 	text-align: center;
 	border-radius: 10px;
-	margin: 30px;
+	margin: 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -450,9 +547,9 @@ a {
 #footer h2 {
 	color: white;
 	font-weight: 500;
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 	letter-spacing: 0.1rem;
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-bottom: 10px;
 }
 #footer .social-icon {
@@ -474,53 +571,24 @@ a {
 	filter: grayscale(0);
 }
 #footer p {
-	color:rgba(36, 56, 237, 0.24);
+	color:blue;
 	font-size: 1.3rem;
 }
 /* ---------------------------------------------------Sixth page -------End Footer section-------------------Code by Qasem------------------------------------- */
-@media (max-width: 952px){
-  label.logox{
-    height: 30px;
-    width: 30px;
-    padding-left: 50px;
-  }
-  nav ul li a{
-    font-size: 16px;
-  }
-}
-@media (max-width: 858px){
-  .checkbtn{
-    display: block;
-  }
-  ul{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-  }
-  nav ul li{
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a{
-    font-size: 20px;
-  }
-  a:hover,a.activex{
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul{
-    left: 0;
-  }
-}
 
 
 
+  /*-----------------------------------------------------------key forms---------------------------------------------------------------*/
+  @keyframes hamburger_puls {
+    0%{
+      opacity: 1;
+      transform: scale(1);
+    }
+    100%{
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
 
   @keyframes text_reveal_box{
     50%{
@@ -546,18 +614,8 @@ a {
 
 
   @media only screen and (min-width: 780px){
-    
-    .cta{
-      font-size: 2.5rem;
-      padding: 20px 60px;
-    }
-    h1.section-title{
-      font-size: 3rem;
-    }
-    #qasem h1{
-      font-size: 4rem;
-    }
-
+   
+    /*--------------------------------------------------------- Projects part 780px ----------------------------------------------------*/
     #activites .activites-top{
       width: 100%;
     }
@@ -582,8 +640,10 @@ a {
     }
     #projects .all-projects .project-img{
       height: 100%;
+      display: flex;
+      flex-wrap: wrap;
     }
-
+    /*--------------------------------------------------------- about part 780px -------------------------------------------------------*/
     #about .about{
       flex-direction: row;
     }
@@ -606,8 +666,7 @@ a {
     #about .col-right h1{
       text-align: left;
     }
-
-
+    /*--------------------------------------------------------- contact part 780px -----------------------------------------------------*/
     #contact .contact{
       flex-direction: column;
       padding: 100px 0;
@@ -619,16 +678,17 @@ a {
       width: 100%;
       display: flex;
       flex-direction: row;
-      padding: 20px;
+      justify-content: space-evenly;
       margin: 0;
+      padding: 50px;
     }
     #contact .contact-item{
-      margin: 20px;
+      margin: 5 px;
       flex-direction: row;
     }
     #contact .contact-item .icon{
-      height: 80px;
-      width: 80px;
+      height: 100px;
+      width: 100px;
     }
     #contact .contact-item .icon img{
       object-fit: contain;
@@ -640,8 +700,27 @@ a {
     }
   }
 
-
+/*----------------------------------------------------------------------------------------------------------------*/
   @media only screen and (min-width: 1200px) {
+    #header .hamburger{
+      display: none;
+    }
+    #header .nav-list ul{
+      position: initial;
+      display: block;
+      height: auto;
+      width: fit-content;
+      background-color: transparent;
+    }
+    #header .nav-list ul li{
+      display: inline-block;
+    }
+    #header .nav-list ul li a{
+      font-size: 1rem;
+    }
+    #header .nav-list ul a::after{
+      display: none;
+    }
     #activites .activites-bottom .activites-item{
       flex-basis: 22%;
       margin: 1.5%;
