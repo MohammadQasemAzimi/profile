@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,700&family=Fuzzy+Bubbles&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+html{
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+.container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-title{
+  font-size: 2rem;
+  font-weight: 200;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  text-align: center;
+}
+.section-title span{
+  color: blue;
+}
+
+/* ---------------------------------------------------Header page-------Nav bar Start-----------------Code by Qasem----------------------------------------------- */
+#header{
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+#header .header{
+  min-height: 8vh;
+  background-color: transparent; /*I should change this color*/
+  transition: .5s ease background-color;
+}
+#header .brand img{
+  margin-bottom: -10%;
+  height: 100px;
+  width: 100px;
+  transition: .7s ease transform;
+}
+#header .brand img:hover{
+  transform: scale(1.5);
+}
+#header .nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  padding: 0 10px;
+}
+#header .nav-list ul{
+  list-style: none;
+  position: absolute;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: .5s ease left;
+}
+#header .nav-list ul.active {
+  left: 0%;
+}
+
+#header .nav-list ul a{
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+#header .nav-list ul a::after{
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: blue;
+  opacity: .1;
+  font-size: 8rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: .9s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after{
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+#header .nav-list ul li:hover a{
+  color: blue;
+}
+#header .hamburger{
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid blue;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: scale(.8);
+  margin-right: 20px;
+}
+#header .hamburger::after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid blue;
+  animation: hamburger_puls 2s ease infinite;
+}
+#header .hamburger .bar{
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: blue;
+  z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: blue;
+  transition: .3s ease;
+  transition-property: top, bottom;
+}
+#header .hamburger .bar::after{
+  top: 8px;
+}
+#header .hamburger .bar::before{
+  bottom: 8px;
+}
+#header .hamburger.active .bar::after{
+  top: 0px;
+}
+#header .hamburger.active .bar::before{
+  bottom: 0px;
+}
+
+
+
+/* ---------------------------------------------------Header page-------Nav bar End------------------Code by Qasem----------------------------------------------- */
+
+/* ---------------------------------------------------First page--------Home Start --------------------Code by Qasem----------------------------------------------- */
+a {
+  text-decoration: none;
+}
+
+#qasem{
+  background-image: url("../images/q1.jpeg");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+#qasem::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .7;
+  z-index: -1;
+}
+#qasem .raheb{
+  margin-right: 50%;
+  margin-top: 20%;
+}
+#qasem h1{
+  display: block;
+  width: fit-content;
+  font-size: 3rem;
+  position: relative;
+  color: white;
+  animation: text_reveal .5s ease forwards;
+  animation-delay: 1s;
+}
+#qasem h1:nth-child(1){
+  animation-delay: 1s;
+}
+#qasem h1:nth-child(2){
+  animation-delay: 2s;
+}
+#qasem h1:nth-child(3){
+  animation-delay: 3s;
+}
+#qasem h1:nth-child(4){
+  animation: rext_reveal_name .5s ease forwards;
+  animation-delay: 4s;
+}
+#qasem h1 span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: blue;
+  animation: text_reveal_box 1s ease;
+  animation-delay: .3s;
+}
+#qasem h1:nth-child(1) span{
+  animation-delay: .5s;
+}
+#qasem h1:nth-child(2) span{
+  animation-delay: 1.5s;
+}
+#qasem h1:nth-child(3) span{
+  animation-delay: 2.5s;
+}
+#qasem h1:nth-child(4) span{
+  animation-delay: 3.5s;
+}
+#qasem .cta{
+  display: inline-block;
+  padding:10px;
+  color: blue;
+  background-color: transparent;
+  border: 3px solid blue;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin-top: 36px;
+  transition-property: .3s ease;
+  transition: 0.5s;
+}
+#qasem .cta:hover{
+  color: white;
+  background-color: blue;
+  transition: .5s;
+}
+
+/* ---------------------------------------------------First page-------End first page -------------------------Code by Qasem------------------------------------ */
+
+/* ---------------------------------------------------Second page ------Activity section-----------------------Code by Qasem------------------------------------ */
+#activites .activites{
+  flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px;
+}
+#activites .activites-top{
+  width: 500px;
+  margin: 0 auto;
+}
+
+#activites .activites-top p{
+  color: black;
+  font-size: 1.4rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: .05rem;
+  text-align: justify;
+}
+#activites .activites-top p span{
+  color: blue;
+}
+#activites .activites-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+#activites .activites-item{
+  flex-basis: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  background-image: url("../images/black and white and blue.jpg");
+  background-size: cover;
+  margin: 10px 5px;
+  overflow: hidden;
+}
+#activites .activites-item::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .8;
+  z-index: -1; 
+}
+#activites .activites-bottom .icon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+#activites .activites-item h2{
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+#activites .activites-item p{
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+  line-height: 1.8rem;
+}
+/* ---------------------------------------------------Second page ------End Activity section------------------Code by Qasem------------------------------------- */
+
+/* ---------------------------------------------------Third page -------Start projects section----------------Code by Qasem------------------------------------- */
+#projects .projects{
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+#projects .projects-header h1{
+  margin-bottom: 50px;
+}
+#projects .all-projects{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+}
+#projects .project-item{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#projects .project-info{
+  padding: 10px 20px;
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-image: linear-gradient(60deg, blue 0%, lightblue 100%);
+  color: white;
+}
+#projects .project-info h1{
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+#projects .project-info h2{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+#projects .project-info p{
+  color: white;
+  text-align: left;
+  font-size: 1rem;
+  margin-top: 20px;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+#projects .project-img{
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: cover;
+  flex-basis: 50%;
+  overflow: hidden;
+  position: relative;
+}
+#projects .project-img::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .6;
+}
+#projects .project-img img{
+  transition: .3s ease transform;
+}
+#projects .project-item:hover .project-img img{
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------Third page -------End projects section-------------Code by Qasem----------------------------------------- */
+
+/* ---------------------------------------------------Forth page -------Start About me section-----------Code by Qasem----------------------------------------- */
+#about .about{
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+#about .col-left{
+  width: 250px;
+  height: 360px;
+}
+#about .col-right{
+  width: 100%;
+}
+#about .col-right h2{
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  margin-bottom: 10px;
+}
+#about .col-right p{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: justify;
+}
+#about .cv{
+  display: inline-block;
+  padding:10px 20px;
+  color: blue;
+  background-color: transparent;
+  border: 3px solid blue;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin-top: 36px;
+  transition-property: .3s ease;
+  margin-bottom: 30px;
+
+}
+#about .cv:hover{
+  color: white;
+  background-color: blue;
+}
+#about .col-left .about-img{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#about .col-left .about-img::after{
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 19px;
+  height: 98%;
+  width: 98%;
+  border: 7px solid blue;
+  z-index: -1;
+}
+/* ---------------------------------------------------Forth page --------End About me section-----------------Code by Qasem------------------------------------- */
+/* ---------------------------------------------------Fifth page -------Start Contact section-----------------Code by Qasem------------------------------------- */
+#contact .contact {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#contact .contact-items {
+	/* max-width: 400px; */
+	width: 80%;
+}
+#contact .contact-item {
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	margin: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 0px 18px 0 blue;
+	transition: 0.3s ease box-shadow;
+}
+#contact .contact-item:hover {
+	box-shadow: 0px 0px 5px 0 blue;
+}
+#contact .icon {
+	width: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#contact .contact-info h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+#contact .contact-info h2 {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+/* ---------------------------------------------------Fifth page -------End Contact section-------------------Code by Qasem------------------------------------- */
+
+/* ---------------------------------------------------Sixth page -------Start Footer section-------------------Code by Qasem------------------------------------- */
+
+#footer {
+	background-image: linear-gradient(60deg, rgb(23, 23, 26) 0%, rgb(42, 24, 139) 100%);
+}
+#footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+.brand h1{
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+.brand h1 span{
+  color: blue;
+}
+#footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.3rem;
+	letter-spacing: 0.1rem;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+#footer .social-item {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+#footer .social-item img {
+  height: 60px;
+  width: 60px;
+	filter: grayscale(1);
+	transition: 0.3s ease filter;
+}
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+#footer p {
+	color:blue;
+	font-size: 1.3rem;
+}
+/* ---------------------------------------------------Sixth page -------End Footer section-------------------Code by Qasem------------------------------------- */
+
+
+
+  /*-----------------------------------------------------------key forms---------------------------------------------------------------*/
+  @keyframes hamburger_puls {
+    0%{
+      opacity: 1;
+      transform: scale(1);
+    }
+    100%{
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes text_reveal_box{
+    50%{
+      width: 100%;
+      left: 0%;
+    }
+    100%{
+      width: 0%;
+      left: 100%;
+    }
+  }
+  @keyframes rext_reveal{
+    100%{
+      color: white;
+    }
+  }
+  @keyframes rext_reveal_name{
+    100%{
+      color: blue;
+      font-weight: 500px;
+    }
+  }
+
+
+  @media only screen and (min-width: 768px){
+   
+    /*--------------------------------------------------------- Projects part 768px ----------------------------------------------------*/
+    /*new codes are added START*/
+    .cta {
+      font-size: 2.5rem;
+      padding: 20px 60px;
+    }
+
+    h1.section-title{
+      font-size: 3rem;
+    }
+    #qasem {
+      font-size: 6rem;
+    }
+
+    /*new codes are added END*/
+    
+    #activites .activites-top{
+      width: 100%;
+    }
+    #activites .activites-bottom .activites-item {
+      flex-basis: 45%;
+      margin: 2.5%;
+    }
+    #projects .project-item{
+      flex-direction: row;
+    }
+    #projects .project-item:nth-child(even){
+      flex-direction: row-reverse;
+    }
+    #projects .project-item{
+      height: 400px;
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
+    }
+    #projects .all-projects .project-info{
+      height: 100%;
+    }
+    #projects .all-projects .project-img{
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    /*--------------------------------------------------------- about part 768px -------------------------------------------------------*/
+    #about .about{
+      flex-direction: row;
+    }
+    #about .col-left{
+      width: 600px;
+      height: 400px;
+      padding-left: 60px;
+    }
+    #about .about .col-left .about-img::after{
+      left: -45px;
+      top: 34px;
+      height: 98%;
+      width: 98%;
+      border: 10px solid blue;
+    }
+    #about .col-right{
+      text-align: left;
+      margin-left: 20px;
+    }
+    #about .col-right h1{
+      text-align: left;
+    }
+    /*--------------------------------------------------------- contact part 768px -----------------------------------------------------*/
+    #contact .contact{
+      flex-direction: column;
+      padding: 100px 0;
+      align-items: center;
+      justify-content: center;
+      min-width: 20vh;
+    }
+    #contact .contact-items{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding: 0 0 0 0;
+      margin: 0 0;
+    }
+    #contact .contact-item{
+      margin: 5 px;
+      padding: 10px 0;
+      flex-direction: row;
+    }
+    #contact .contact-item .icon{
+      height: 100px;
+      width: 100px;
+    }
+    #contact .contact-item .icon img{
+      object-fit: contain;
+    }
+    #contact .contact-item .contact-info{
+      width: 100%;
+      text-align: left;
+      padding-left: 20px;
+    }
+  }
+
+/*----------------------------------------------------------------------------------------------------------------*/
+  @media only screen and (min-width: 1200px) {
+    #header .hamburger{
+      display: none;
+    }
+    #header .nav-list ul{
+      position: initial;
+      display: block;
+      height: auto;
+      width: fit-content;
+      background-color: transparent;
+    }
+    #header .nav-list ul li{
+      display: inline-block;
+    }
+    #header .nav-list ul li a{
+      font-size: 1rem;
+    }
+    #header .nav-list ul a::after{
+      display: none;
+    }
+    #activites .activites-bottom .activites-item{
+      flex-basis: 22%;
+      margin: 1.5%;
+    } 
+  }
