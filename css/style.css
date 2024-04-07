@@ -245,9 +245,9 @@ a {
 #qasem .cta{
   display: inline-block;
   padding:10px;
-  color: white;
-  background-color: transparent;
-  border: 3px solid white;
+  color: blue;
+  background-color: white;
+  border: 3px solid blue;
   font-size: 1rem;
   letter-spacing: .1rem;
   margin-top: 36px;
@@ -255,8 +255,8 @@ a {
   transition: 0.5s;
 }
 #qasem .cta:hover{
-  color: blue;
-  background-color: white;
+  color: white;
+  background-color: blue;
   transition: .5s;
 }
 
@@ -395,12 +395,10 @@ a {
   font-weight: 300;
 }
 #projects .project-img{
-  height: 200px;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  object-fit: cover;
+  padding: 0;
   flex-basis: 50%;
+  object-fit: cover;
   overflow: hidden;
   position: relative;
 }
@@ -653,10 +651,11 @@ a {
     #projects .all-projects .project-info{
       height: 100%;
     }
-    #projects .all-projects .project-img{
-      height: 100%;
-      display: flex;
-      flex-wrap: wrap;
+    #projects .all-projects .project-img {
+      /* Remove conflicting height and flexbox properties */
+      width: 100%;  /* Maintain width for responsiveness */
+      object-fit: fill;  /* Ensure image fills container proportionally */
+      overflow: hidden;  /* Hide any overflowing parts */
     }
     /*--------------------------------------------------------- about part 768px -------------------------------------------------------*/
     #about .about{
@@ -715,7 +714,7 @@ a {
     }
   }
 
-/*----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------contact part 1200px-----------------------------------------------------*/
   @media only screen and (min-width: 1200px) {
     #header .hamburger{
       display: none;
